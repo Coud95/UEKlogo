@@ -12,10 +12,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 
+
 public class MainActivity extends AppCompatActivity {
     private ImageView uek;
     private FrameLayout background;
-    private Fragment colour, settings;
+    private Fragment colour, settings, effects;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         background = findViewById(R.id.background);
         colour = new Colour();
         settings = new Settings();
+        effects = new Effects();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction()
                 .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -40,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.button2) {
                     FragmentTransaction sizeTransaction = getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
                     sizeTransaction.replace(R.id.fragments, settings).commit();
+                    return true;
+                } else if (item.getItemId() == R.id.button3) {
+                    FragmentTransaction effectsTransaction = getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+                    effectsTransaction.replace(R.id.fragments, effects).commit();
                     return true;
                 }
                 return false;

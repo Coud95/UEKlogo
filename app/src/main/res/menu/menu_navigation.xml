@@ -8,4 +8,8 @@
             android:title="@string/button2"
             android:id="@+id/button2"
             android:icon="@drawable/ic_photo_size" />
+        <item
+            android:title="@string/button3"
+            android:id="@+id/button3"
+            android:icon="@drawable/ic_photo_filter" />
 </menu>

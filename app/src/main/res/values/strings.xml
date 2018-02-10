@@ -8,5 +8,8 @@
     <string name="button2">przekształcenie</string>
     <string name="size">Rozmiar:</string>
     <string name="rotation">Rotacja:</string>
+    <string name="button3">efekty</string>
+    <string name="shadow">Cień:</string>
+    <string name="transparency">Przezroczystość:</string>
 
 </resources>

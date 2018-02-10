@@ -3,37 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.coud.ueklogo.Settings">
+    tools:context="com.example.coud.ueklogo.Effects">
 
     <TextView
-        android:id="@+id/sizeText"
+        android:id="@+id/shadowText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="15dp"
-        android:text="@string/size"
+        android:text="@string/shadow"
         android:textSize="15sp" />
 
     <SeekBar
-        android:id="@+id/size"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:progress="50" />
-
-    <TextView
-        android:id="@+id/rotationText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="@string/rotation"
-        android:textSize="15sp" />
-
-    <SeekBar
-        android:id="@+id/rotation"
+        android:id="@+id/shadow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" />
 
+    <TextView
+        android:id="@+id/pixelText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/transparency"
+        android:textSize="15sp" />
+
+    <SeekBar
+        android:id="@+id/blur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

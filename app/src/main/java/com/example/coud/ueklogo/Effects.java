@@ -1,6 +1,7 @@
 package com.example.coud.ueklogo;
 
 
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,15 +11,16 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Settings extends Fragment implements SeekBar.OnSeekBarChangeListener {
+public class Effects extends Fragment implements SeekBar.OnSeekBarChangeListener {
     MainActivity mainActivity;
     ImageView uek;
-    private SeekBar size, rotation;
+    private SeekBar shadow, blur;
 
-    public Settings() {
+    public Effects() {
         // Required empty public constructor
     }
 
@@ -26,23 +28,27 @@ public class Settings extends Fragment implements SeekBar.OnSeekBarChangeListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_size, container, false);
+        View view = inflater.inflate(R.layout.fragment_effects, container, false);
         mainActivity = (MainActivity) getActivity();
         uek = mainActivity.getImage();
-        rotation = view.findViewById(R.id.rotation);
-        rotation.setOnSeekBarChangeListener(this);
-        size = view.findViewById(R.id.size);
-        size.setOnSeekBarChangeListener(this);
+        shadow = view.findViewById(R.id.shadow);
+        shadow.setMax(15);
+        shadow.setOnSeekBarChangeListener(this);
+        blur = view.findViewById(R.id.blur);
+        blur.setOnSeekBarChangeListener(this);
         return view;
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-        if (seekBar.getId() == size.getId()) {
-            uek.setScaleX((float) (i * 0.01));
-            uek.setScaleY((float) (i * 0.01));
-        } else if (seekBar.getId() == rotation.getId()) {
-            uek.setRotation((float) (i * 3.6));
+        if (seekBar.getId() == shadow.getId()) {
+            if (i == 0) {
+                uek.setElevation(0);
+            } else {
+                uek.setElevation((15 - i) + 1);
+            }
+        } else if (seekBar.getId() == blur.getId()) {
+            uek.setAlpha(1 - (i * 0.01f));
         }
     }
 
@@ -55,4 +61,5 @@ public class Settings extends Fragment implements SeekBar.OnSeekBarChangeListene
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
+
 }
