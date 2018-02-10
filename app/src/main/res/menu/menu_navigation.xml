@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:title="@string/button1"
+            android:id="@+id/button1"
+            android:icon="@drawable/ic_brush_black" />
+        <item
+            android:title="@string/button2"
+            android:id="@+id/button2"
+            android:icon="@drawable/ic_photo_size" />
+</menu>

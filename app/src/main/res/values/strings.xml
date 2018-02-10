@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">UEKlogo</string>
+    <string name="logo">logo</string>
+    <string name="wheel">color wheel</string>
+    <string name="radio_logo">logo</string>
+    <string name="radio_background">tło</string>
+    <string name="button1">kolor</string>
+    <string name="button2">przekształcenie</string>
+    <string name="size">Rozmiar:</string>
+    <string name="rotation">Rotacja:</string>
+
+</resources>
